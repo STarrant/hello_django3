@@ -7,7 +7,29 @@
     <title>Add an Item</title>
 </head>
 <body>
-    <h1>add a To Do List Item</h1>
+    <h1>Add a To Do List Item</h1>
+    <form method="POST" action="add">
+        <!-- Cross Site Request Forgery Token -->
+        <!-- Django throws an error is this is missing on a POST request -->
+        {% csrf_token %}
+        <div>
+            <p>
+                <label for="id_name">Name: </label>
+                <input type="text" id="id_name" name="item_name" />
+            </p>
+        </div>
+        <div>
+            <p>
+                <label for="id_done">Done: </label>
+                <input type="checkbox" id="id_done" name="item_done" />
+            </p>
+        </div>
+        <div>
+            <p>
+                <button type="submit">Add Item</button>
+            </p>
+        </div>
+    </form>
     
 </body>
 </html>
