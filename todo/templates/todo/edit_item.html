@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add an Item</title>
+    <title>Edit an Item</title>
 </head>
 <body>
-    <h1>Add a To Do List Item</h1>
-    <form method="POST" action="add">
+    <h1>Edit a To Do List Item</h1>
+    <form method="POST">
         <!-- Cross Site Request Forgery Token -->
         <!-- Django throws an error is this is missing on a POST request -->
         {% csrf_token %}
@@ -16,7 +16,7 @@
         {{ form.as_p }}
         <div>
             <p>
-                <button type="submit">Add Item</button>
+                <button type="submit">Update Item</button>
             </p>
         </div>
     </form>
